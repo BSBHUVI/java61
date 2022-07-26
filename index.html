@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea{
+            display: none;
+        }
+    </style>
+    
+</head>
+<body onload="copy()" >
+    <textarea id="my">
+       
+        package com.example.program6;
+
+        import androidx.appcompat.app.AppCompatActivity;
+        
+        import android.content.Intent;
+        import android.os.Bundle;
+        import android.view.View;
+        
+        public class MainActivity extends AppCompatActivity {
+        
+        
+            @Override
+            protected void onCreate(Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+                setContentView(R.layout.activity_main);
+            }
+            public void xml(View view){
+           Intent intent=new Intent(this,parsing.class);
+           intent.putExtra("mode",1);
+           startActivity(intent);
+            }
+            public void json(View view){
+                Intent intent=new Intent(this,parsing.class);
+                intent.putExtra("mode",2);
+                startActivity(intent);
+            }
+        }
+    </textarea>
+  
+    <script>
+        const copy=()=>{
+            var copyText = document.getElementById("my");
+
+           
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); 
+          
+            navigator.clipboard.writeText(copyText.value);
+          
+           
+            alert("Copied ");
+    }
+    </script>
+</body>
+</html>
